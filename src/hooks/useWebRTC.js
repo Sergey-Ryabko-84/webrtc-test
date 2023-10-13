@@ -18,6 +18,7 @@ export default function useWebRTC(roomID) {
 
       return list;
     }, cb);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clients, updateClients]);
 
   const peerConnections = useRef({});
@@ -93,6 +94,7 @@ export default function useWebRTC(roomID) {
     return () => {
       socket.off(ACTIONS.ADD_PEER);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -149,6 +151,7 @@ export default function useWebRTC(roomID) {
     return () => {
       socket.off(ACTIONS.REMOVE_PEER);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -180,6 +183,7 @@ export default function useWebRTC(roomID) {
 
       socket.emit(ACTIONS.LEAVE);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roomID]);
 
   const provideMediaRef = useCallback((id, node) => {
